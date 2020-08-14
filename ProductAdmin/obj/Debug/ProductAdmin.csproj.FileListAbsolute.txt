@@ -84,3 +84,4 @@ C:\Users\kaviya\source\repos\ProductAdmin\ProductAdmin\bin\EntityFramework.SqlSe
 C:\Users\kaviya\source\repos\ProductAdmin\ProductAdmin\obj\Debug\ProductAdmin.Migrations.Initial.resources
 C:\Users\kaviya\source\repos\ProductAdmin\ProductAdmin\obj\Debug\ProductAdmin.csproj.GenerateResource.cache
 C:\Users\kaviya\source\repos\ProductAdmin\ProductAdmin\obj\Debug\ProductAdmin.Migrations.Image.resources
+C:\Users\kaviya\source\repos\ProductAdmin\ProductAdmin\obj\Debug\ProductAdmin.Migrations.Initial2.resources

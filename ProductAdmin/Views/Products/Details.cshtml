@@ -9,7 +9,11 @@
 <div>
     <h4>Product</h4>
     <hr />
+    <div class="col-md-2">
+        <img class="img-responsive" src="~/Content/ProductImages/@Model.Image" />
+    </div>
     <dl class="dl-horizontal">
+
         <dt>
             @Html.DisplayNameFor(model => model.ProductName)
         </dt>

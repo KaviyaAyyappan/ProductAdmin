@@ -57,7 +57,7 @@ namespace ProductAdmin.Controllers
                 if(file !=null)
                 {
                     product.Image = product.Id + Path.GetExtension(file.FileName);
-                    file.SaveAs(Server.MapPath("//Context//ProductImages"));
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//") + product.Image);
                 }
                 db.Products.Add(product);
                 db.SaveChanges();
@@ -87,11 +87,17 @@ namespace ProductAdmin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ProductName,Price,Category,Image")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,ProductName,Price,Category,Image")] Product product,HttpPostedFileBase file, int Id)
         {
+            Product productToEdit = db.Products.Find(Id);
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
+                if (file != null)
+                {
+                    productToEdit.Image = productToEdit.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//") + productToEdit.Image);
+                }
+                db.Entry(productToEdit).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
